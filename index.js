@@ -54,21 +54,23 @@ salaryAmount.addEventListener('input', () => {
     }
 });
 
-
-const AppData = function () {
-    this.income = {};
-    this.addIncome = [];
-    this.incomeMonth = 0;
-    this.expenses = {};
-    this.addExpenses = [];
-    this.deposit = false;
-    this.percentDeposit = 0;
-    this.moneyDeposit = 0;
-    this.budget = 0;
-    this.budgetMonth = 0;
-    this.expensesMonth = 0;
-    this.periodSelects = 0;
+class AppData { 
+    constructor (){ 
+        this.income = {}; 
+        this.addIncome = []; 
+        this.incomeMonth = 0; 
+        this.expenses = {}; 
+        this.addExpenses = []; 
+        this.deposit = false; 
+        this.percentDeposit = 0; 
+        this.moneyDeposit = 0; 
+        this.budget = 0; 
+        this.budgetMonth = 0; 
+        this.expensesMonth = 0; 
+        this.periodSelects = 0; 
+    }
 }
+
 AppData.prototype.start = function () {
     this.budget = +salaryAmount.value;
 
@@ -98,7 +100,7 @@ AppData.prototype.start = function () {
     buttonReset.style.display = 'block';
     // Блокировка input
     inputTypeText.forEach(item => {
-        item.disabled = false;
+        item.disabled = true;
     });
 };
 AppData.prototype.showResult = function () {
