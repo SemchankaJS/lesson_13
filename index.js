@@ -230,15 +230,17 @@ class AppData {
         if(valueSelect === 'other') {
             depositPercent.style.display = 'inline-block';
             depositPercent.value = '';
-            // 3) РџСЂРё РїРѕРґСЃС‡РµС‚Рµ СѓС‡РёС‚С‹РІР°С‚СЊ РїСЂРѕС†РµРЅС‚ РєРѕС‚РѕСЂС‹Р№ РІРІРµР» РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ.
+            // 3) 
             this.depositPercent = depositPercent.value;
             depositPercent.style.display = 'inline-block';
             depositPercent.addEventListener('input',() => {
                 depositPercent.value = depositPercent.value.replace(/\D/g, '');
                 if(depositPercent.value <= 0 || depositPercent.value > 100) {
-                    alert('Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІ РїРѕР»Рµ РїСЂРѕС†РµРЅС‚С‹');
+                    alert('Введите корректное значение в поле проценты');
                     button.disabled = true;
+                    depositPercent.value = 100;
                 } else {
+                    
                     button.disabled = false;
                 }
             });      
